@@ -1,0 +1,3 @@
+[run]
+source = learning_jounral_basic
+omit = learning_jounral_basic/test*
