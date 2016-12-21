@@ -29,19 +29,19 @@ from pyramid.response import Response
 
 
 def home(request):
-    pass
+    return Response("home page")
 
 
 def detail(request):
-    pass
+    return Response("detail page")
 
 
 def create(request):
-    pass
+    return Response("create page")
 
 
 def update(request):
-    pass
+    return Response("update page")
 
 
 def includeme(config):
