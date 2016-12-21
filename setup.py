@@ -12,18 +12,19 @@ requires = [
     'pyramid',
     'pyramid_debugtoolbar',
     'waitress',
-    'tox'
+    'pyramid_jinja2'
     ]
 
 tests_require = [
     'WebTest >= 1.3.1',  # py3 compat
     'pytest',  # includes virtualenv
     'pytest-cov',
+    'tox'
     ]
 
-setup(name='learning_jounral_basic',
+setup(name='learning_journal_basic',
       version='0.0',
-      description='learning_jounral_basic',
+      description='learning_journal_basic',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
           "Programming Language :: Python",
@@ -44,6 +45,6 @@ setup(name='learning_jounral_basic',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = learning_jounral_basic:main
+      main = learning_journal_basic:main
       """,
       )

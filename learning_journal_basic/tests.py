@@ -14,12 +14,12 @@ class ViewTests(unittest.TestCase):
         from .views import my_view
         request = testing.DummyRequest()
         info = my_view(request)
-        self.assertEqual(info['project'], 'learning_jounral_basic')
+        self.assertEqual(info['project'], 'learning_journal_basic')
 
 
 class FunctionalTests(unittest.TestCase):
     def setUp(self):
-        from learning_jounral_basic import main
+        from learning_journal_basic import main
         app = main({})
         from webtest import TestApp
         self.testapp = TestApp(app)
