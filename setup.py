@@ -21,9 +21,9 @@ tests_require = [
     'pytest-cov',
     ]
 
-setup(name='learning_jounral_basic',
+setup(name='learning_journal_basic',
       version='0.0',
-      description='learning_jounral_basic',
+      description='learning_journal_basic',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
           "Programming Language :: Python",
@@ -44,6 +44,6 @@ setup(name='learning_jounral_basic',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = learning_jounral_basic:main
+      main = learning_journal_basic:main
       """,
       )

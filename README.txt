@@ -1,4 +1,4 @@
-learning_jounral_basic README
+learning_journal_basic README
 ==================
 
 Getting Started
