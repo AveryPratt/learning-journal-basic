@@ -1,4 +1,7 @@
-from pyramid.view import view_config
+from pyramid.response import Response
+
+def home_page(request):
+    return Response("This is my first view!")
 
 
 @view_config(route_name='home', renderer='/')

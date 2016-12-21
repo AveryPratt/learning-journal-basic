@@ -6,10 +6,13 @@ def main(global_config, **settings):
     """
     config = Configurator(settings=settings)
     config.include('pyramid_jinja2')
-    config.add_static_view('static', 'static', cache_max_age=3600)
-    config.add_route('home', '/')
-    config.add_route('detail', '/')
-    config.add_route('create', '/')
-    config.add_route('update', '/')
+    config.include('.routes')
+    config.include('.views')
     config.scan()
     return config.make_wsgi_app()
+
+
+def includeme(config):
+    """ This function adds routes to Pyramid's Configurator """
+    config.add_static_view('static', 'static', cache_max_age=3600)
+    config.add_route('home', '/')
