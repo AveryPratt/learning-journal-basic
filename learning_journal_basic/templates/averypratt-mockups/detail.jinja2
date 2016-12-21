@@ -15,14 +15,13 @@
             </nav>
         </header>
         <article>
-            <ul>
-                <li>
-                    <h2>{{title}}</h2>
-                    <p>{{body}}</p>
-                    <a href="templates/averypratt-mockups/edit_form.html"><h4>edit</h4></a>
-                    <h3>{{date}}</h3>
-                </li>
-            </ul>
+            {% for entry in entries %}
+                <h2>{{entry.title}}</h2>
+                <p>{{entry.body}}</p>
+                <h3>{{entry.date}}</h3>
+                <a href="{{request.route_url('update', id=entry.id)}}"><h4>Edit</h4></a>
+            {% endfor %}
+
         </article>
         <footer>
             
