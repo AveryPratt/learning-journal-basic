@@ -24,29 +24,38 @@
 #     return {'project': 'learning_journal_basic'}
 
 
+import os
 import io
-from pyramid.response import Response
+from pyramid.view import view_config
 
 
+@view_config(route_name="home", renderer="templates/averypratt-mockups/home.jinja2")
 def home(request):
-    return Response("home page")
+    return {
+        "title": "Entry 11",
+        "date": "12/19/16",
+        "body": "body placeholder"
+    }
 
 
+@view_config(route_name="detail", renderer="templates/averypratt-mockups/detail.jinja2")
 def detail(request):
-    return Response("detail page")
+    return {
+        "title": "Entry 11",
+        "body": "body placeholder",
+        "date": "12/19/16"
+    }
 
 
+@view_config(route_name="create", renderer="templates/averypratt-mockups/create_form.jinja2")
 def create(request):
-    return Response("create page")
+    return {}
 
 
+@view_config(route_name="update", renderer="templates/averypratt-mockups/edit_form.jinja2")
 def update(request):
-    return Response("update page")
-
-
-def includeme(config):
-    config.add_view(home, route_name='home')
-    config.add_view(detail, route_name='detail')
-    config.add_view(create, route_name='create')
-    config.add_view(update, route_name='update')
-
+    return {
+        "title": "Entry 11",
+        "body": "body placeholder",
+        "date": "12/19/16"
+    }
