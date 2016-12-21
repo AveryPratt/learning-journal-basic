@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link href="theme.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Learning Journal</h1>
+            <nav>
+                <ul>
+                    <li><a href="/"><h3>Home</h3></a></li>
+                    <li><a href="/journal/11"><h3>Detail</h3></a></li>
+                    <li><a href="/journal/11/edit-entry"><h3>Edit Entry</h3></a></li>
+                    <li><a href="/journal/new-entry"><h3>Create New Entry</h3></a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            {% if entries %}
+                {% for entry in entries %}
+                    <h2><a href="{{ request.route_url('detail', id=entry.id) }}">{{ entry.title }}</a></h2>
+                    <p>Created <strong>{{ entry.date }}</strong></p>
+                    <br/>
+                {% endfor %}
+            {% else %}
+                <p>This journal is empty</p>
+            {% endif %}
+        </article>
+        <aside>
+            <a href="templates/averypratt-mockups/create_form.html"><h2>New Entry</h2></a>
+        </aside>
+        <footer>
+
+        </footer>
+    </body>
+</html>

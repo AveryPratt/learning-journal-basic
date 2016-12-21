@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link href="theme.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Learning Journal</h1>
+            <nav>
+                <ul>
+                    <li><a href="/"><h3>Home</h3></a></li>
+                    <li><a href="/journal/11"><h3>Detail</h3></a></li>
+                    <li><a href="/journal/11/edit-entry"><h3>Edit Entry</h3></a></li>
+                    <li><a href="/journal/new-entry"><h3>Create New Entry</h3></a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            {% for entry in entries %}
+                <h2>{{entry.title}}</h2>
+                <p>{{entry.body}}</p>
+                <h3>{{entry.date}}</h3>
+                <a href="{{request.route_url('update', id=entry.id)}}"><h4>Edit</h4></a>
+            {% endfor %}
+
+        </article>
+        <footer>
+            
+        </footer>
+    </body>
+</html>
